@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TalkyTalk</string>
+    <string name="enter_user_name">Enter user name</string>
+    <string name="welcome_to_talky_talk">Welcome to Talky Talk!</string>
+    <string name="sign_up">Sign up</string>
+    <string name="talk">Talk</string>
+    <string name="contacts">Contacts</string>
+
+    <string name="moments_ago">moments ago</string>
+    <string name="minutes_ago">%1$d minutes ago</string>
+    <string name="hours_ago">%1$d hours ago</string>
+    <string name="days_ago">%1$d days ago</string>
+    <string name="weeks_ago">%1$d weeks ago</string>
+    <string name="months_ago">%1$d months ago</string>
+    <string name="years_ago">%1$d years ago</string>
+</resources>

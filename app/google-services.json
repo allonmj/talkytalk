@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "943616114758",
+    "firebase_url": "https://talkytalk-a0ea5.firebaseio.com",
+    "project_id": "talkytalk-a0ea5",
+    "storage_bucket": "talkytalk-a0ea5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943616114758:android:0c33b0d90d8f65df",
+        "android_client_info": {
+          "package_name": "com.allonapps.talkytalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943616114758-1cdfek9vnf8v7rttgks0jj6gq58pnka7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.allonapps.talkytalk",
+            "certificate_hash": "13ad6f29d3b56f55e68c9df0dd82793e6d00d61f"
+          }
+        },
+        {
+          "client_id": "943616114758-n64p9p6fbeoubdqbur0878ts8b6huamk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXje3h6GPm1gErdqJ8MhGCNHtQAFcOkpM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943616114758-n64p9p6fbeoubdqbur0878ts8b6huamk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
