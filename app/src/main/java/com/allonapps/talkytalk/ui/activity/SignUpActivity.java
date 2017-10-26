@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.allonapps.talkytalk.R;
@@ -34,6 +35,9 @@ public class SignUpActivity extends AppCompatActivity implements SignUpPresentat
 
     @BindView(R.id.buttonSignUp)
     SignInButton buttonSignUp;
+
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     private static final int RC_SIGN_IN = 9001;
 
@@ -97,6 +101,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpPresentat
                 GoogleSignInAccount account = googleSignInResult.getSignInAccount();
                 AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                 signUpPresenter.onAuthenticationGranted(credential);
+            } else {
+                signUpPresenter.onAuthenticationFailed();
             }
         }
     }
@@ -122,6 +128,11 @@ public class SignUpActivity extends AppCompatActivity implements SignUpPresentat
     @Override
     public void showSignUpError() {
         Toast.makeText(this, "Error signing up", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showProgress(boolean show) {
+        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     @Override

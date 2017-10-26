@@ -13,4 +13,6 @@ public interface SignUpPresentation {
     void requestAuthentication();
 
     void showSignUpError();
+
+    void showProgress(boolean show);
 }

@@ -17,6 +17,7 @@ import com.google.firebase.auth.AuthCredential;
 public class SignUpPresenter extends LifecyclePresenter<SignUpPresentation> implements Receiver<CurrentUser, CurrentUserError, CurrentUserQuery> {
 
     private String userName;
+    private boolean signingUp;
     private final Repository<CurrentUser, CurrentUserError, CurrentUserQuery> currentUserRepository;
 
     public SignUpPresenter(Repository<CurrentUser, CurrentUserError, CurrentUserQuery> currentUserRepository) {
@@ -34,6 +35,10 @@ public class SignUpPresenter extends LifecyclePresenter<SignUpPresentation> impl
     }
 
     public void onSignUpClick() {
+        if (signingUp) {
+            return;
+        }
+        signingUp = true;
         view.requestAuthentication();
     }
 
@@ -43,16 +48,26 @@ public class SignUpPresenter extends LifecyclePresenter<SignUpPresentation> impl
     }
 
     public void onAuthenticationGranted(AuthCredential credential) {
+        view.showProgress(true);
         currentUserRepository.update(new CurrentUser(credential, userName), this);
     }
 
     @Override
     public void onSuccess(@Nullable CurrentUserQuery query, CurrentUser success) {
+        signingUp = false;
+        view.showProgress(false);
         view.navigateToContacts();
     }
 
     @Override
     public void onError(@Nullable CurrentUserQuery query, CurrentUserError error) {
+        signingUp = false;
+        view.showProgress(false);
+        view.showSignUpError();
+    }
+
+    public void onAuthenticationFailed() {
+        signingUp = false;
         view.showSignUpError();
     }
 }
